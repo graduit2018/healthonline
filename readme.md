@@ -23,7 +23,10 @@ $ docker-compose up -d
 ```
 
 * copy the .env.example file to .env
-* run ```php artisan key:generate``` to set APP_KEY
-* run ```php artisan storage:link``` to create [public/storage] directory link
-* run ```npm install``` to install dependencies
-* run ```npm run dev``` to run all Mix tasks
+* ssh into app container ```docker exec -it -u 1000:1000 healthonline_app_1 bash```
+    * run ```composer install```
+    * run ```php artisan key:generate``` to set APP_KEY
+    * run ```php artisan storage:link``` to create [public/storage] directory link
+* ssh into nodejs container ```docker exec -it -u 1000:1000 healthonline_nodejs_1 bash```
+    * run ```npm install``` to install dependencies
+    * run ```npm run dev``` to run all Mix tasks
