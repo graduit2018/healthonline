@@ -16,3 +16,7 @@ script:
   - composer cs-check-all
   - composer check-name
   - npm run prod
+cache:
+  directories:
+    - node_modules
+    - vendor
