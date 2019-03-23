@@ -27,6 +27,7 @@ before_install:
 - cp .travis/healthonline ~/.ssh/healthonline
 - chmod 600 ~/.ssh/healthonline
 - ssh-add ~/.ssh/healthonline
+- 'echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config'
 deploy:
 - provider: script
   skip_cleanup: true
