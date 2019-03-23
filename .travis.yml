@@ -20,6 +20,9 @@ cache:
   directories:
   - node_modules
   - vendor
+addons:
+  ssh_known_hosts:
+  - $STAGING_SERVER
 before_install:
 - openssl aes-256-cbc -K $encrypted_4bcf1a01802b_key -iv $encrypted_4bcf1a01802b_iv
   -in .travis/healthonline.enc -out .travis/healthonline -d
