@@ -33,7 +33,7 @@
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-red-light sidebar-mini">
     <!-- Site wrapper -->
     <div class="wrapper">
         @include('layouts.patient.partials.header')
