@@ -20,17 +20,17 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('admin')->group(function() {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login');
-    Route::get('/home', 'Admin\AdminController@index')->name('admin.home');
+    Route::get('/dashboard', 'Admin\AdminController@index')->name('admin.dashboard');
 });
 
 Route::prefix('doctor')->group(function() {
     Route::get('/login', 'Auth\DoctorLoginController@showLoginForm')->name('doctor.login');
     Route::post('/login', 'Auth\DoctorLoginController@login');
-    Route::get('/home', 'Doctor\DoctorController@index')->name('doctor.home');
+    Route::get('/dashboard', 'Doctor\DoctorController@index')->name('doctor.dashboard');
 });
 
 Route::prefix('patient')->group(function() {
     Route::get('/login', 'Auth\PatientLoginController@showLoginForm')->name('patient.login');
     Route::post('/login', 'Auth\PatientLoginController@login');
-    Route::get('/home', 'Patient\PatientController@index')->name('patient.home');
+    Route::get('/dashboard', 'Patient\PatientController@index')->name('patient.dashboard');
 });
