@@ -1,6 +1,6 @@
 <header class="main-header">
         <!-- Logo -->
-        <a class="logo">
+        <a href="{{ url('/') }}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>H</b>O</span>
             <!-- logo for regular state and mobile devices -->

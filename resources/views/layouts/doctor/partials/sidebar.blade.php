@@ -1,6 +1,6 @@
 <aside class="main-sidebar elevation-4 sidebar-light-warning" style="min-height: 877px;">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link bg-warning">
+    <a href="{{ url('/') }}" class="brand-link bg-warning">
         <img src="https://adminlte.io/themes/dev/AdminLTE/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">Health Online</span>
