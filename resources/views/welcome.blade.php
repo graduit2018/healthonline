@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>HealthOnline</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -65,33 +65,27 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+            <div class="top-right links">
+                @auth('patient')
+                    <a href="{{ route('patient.dashboard') }}">Patient Dashboard</a>
+                @else
+                    <a href="{{ route('patient.login') }}">Patient Login</a>
+                @endauth
+                @auth('doctor')
+                    <a href="{{ route('doctor.dashboard') }}">Doctor Dashboard</a>
+                @else
+                    <a href="{{ route('doctor.login') }}">Doctor Login</a>
+                @endauth
+                @auth('admin')
+                    <a href="{{ route('admin.dashboard') }}">Admin Dashboard</a>
+                @else
+                    <a href="{{ route('admin.login') }}">Admin Login</a>
+                @endauth
+            </div>
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    HealthOnline
                 </div>
             </div>
         </div>
