@@ -18,22 +18,22 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('admin')->group(function() {
-    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
-    Route::post('/login', 'Auth\AdminLoginController@login');
-    Route::post('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+    Route::get('/login', 'Admin\Auth\LoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Admin\Auth\LoginController@login');
+    Route::post('/logout', 'Admin\Auth\LoginController@logout')->name('admin.logout');
     Route::get('/dashboard', 'Admin\AdminController@index')->name('admin.dashboard');
 });
 
 Route::prefix('doctor')->group(function() {
-    Route::get('/login', 'Auth\DoctorLoginController@showLoginForm')->name('doctor.login');
-    Route::post('/login', 'Auth\DoctorLoginController@login');
-    Route::post('/logout', 'Auth\DoctorLoginController@logout')->name('doctor.logout');
+    Route::get('/login', 'Doctor\Auth\LoginController@showLoginForm')->name('doctor.login');
+    Route::post('/login', 'Doctor\Auth\LoginController@login');
+    Route::post('/logout', 'Doctor\Auth\LoginController@logout')->name('doctor.logout');
     Route::get('/dashboard', 'Doctor\DoctorController@index')->name('doctor.dashboard');
 });
 
 Route::prefix('patient')->group(function() {
-    Route::get('/login', 'Auth\PatientLoginController@showLoginForm')->name('patient.login');
-    Route::post('/login', 'Auth\PatientLoginController@login');
-    Route::post('/logout', 'Auth\PatientLoginController@logout')->name('patient.logout');
+    Route::get('/login', 'Patient\Auth\LoginController@showLoginForm')->name('patient.login');
+    Route::post('/login', 'Patient\Auth\LoginController@login');
+    Route::post('/logout', 'Patient\Auth\LoginController@logout')->name('patient.logout');
     Route::get('/dashboard', 'Patient\PatientController@index')->name('patient.dashboard');
 });
