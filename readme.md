@@ -1,5 +1,9 @@
 # Group 5 - Health Online
 
+## Continuous Integration & Continuous Delivery
+
+- We're using [Travis CI](https://travis-ci.org/graduit2018/healthonline) to run the tests and automatically deploy to our server on Google Cloud. 
+
 ## Contributing
 
 - Current Git workflow: [Gitflow by Vincent Driessen at nvie](https://nvie.com/posts/a-successful-git-branching-model/).
