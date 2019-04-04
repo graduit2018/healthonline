@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Patient | Log in</title>
+    <title>Patient | Registration Page</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -26,65 +26,63 @@
   <![endif]-->
 
     <!-- Google Font -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition login-page">
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="{{ url('/') }}"><b>Patient</b>Login</a>
+<body class="hold-transition register-page">
+    <div class="register-box">
+        <div class="register-logo">
+            <a href="{{ url('/') }}"><b>Patient</b>Register</a>
         </div>
-        <!-- /.login-logo -->
-        <div class="login-box-body">
 
-            <form action="{{ route('patient.login') }}" method="post">
+        <div class="register-box-body">
+            <p class="login-box-msg">Register a new membership</p>
+
+            <form action="{{ route('patient.register') }}" method="post">
                 @csrf
-
                 <div class="form-group has-feedback">
-                    <input id="email" type="email" placeholder="{{ __('E-Mail Address') }}" class="form-control" name="email"
-                        value="{{ old('email') }}" required autofocus>
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    <input type="text" class="form-control" placeholder="Full name" name="name" value="{{ old('name') }}" required autofocus>
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
+                @if ($errors->has('name'))
+                <span class="help-block text-red">
+                        <strong>{{ $errors->first('name') }}</strong>
+                    </span> @endif
                 <div class="form-group has-feedback">
-                    <input id="password" type="password" placeholder="{{ __('Password') }}" class="form-control" name="password"
-                        required>
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required>
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 @if ($errors->has('email'))
                 <span class="help-block text-red">
-                    <strong>{{ $errors->first('email') }}</strong>
-                </span>
-                @endif
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span> @endif
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" placeholder="Password" name="password" required>
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
                 @if ($errors->has('password'))
                 <span class="help-block text-red">
-                    <strong>{{ $errors->first('password') }}</strong>
-                </span>
-                @endif
-
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span> @endif
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation" required>
+                    <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+                </div>
                 <div class="row">
-                    <div class="col-xs-8">
-                        <div class="checkbox icheck">
-                            <label>
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember"
-                                    {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
-                            </label>
-                        </div>
-                    </div>
+                    <div class="col-xs-8"></div>
                     <!-- /.col -->
                     <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">{{ __('Login') }}</button>
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
                     </div>
                     <!-- /.col -->
                 </div>
             </form>
 
-            <a href="#" class="text-center">Register a new membership</a>
-
+            <a href="{{ route('patient.login') }}" class="text-center">I already have a membership</a>
         </div>
-        <!-- /.login-box-body -->
+        <!-- /.form-box -->
     </div>
-    <!-- /.login-box -->
+    <!-- /.register-box -->
 
     <!-- jQuery 3 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
