@@ -35,11 +35,11 @@ Route::prefix('patient')->group(function() {
     Route::get('login', 'Patient\Auth\LoginController@showLoginForm')->name('patient.login');
     Route::post('login', 'Patient\Auth\LoginController@login');
     Route::post('logout', 'Patient\Auth\LoginController@logout')->name('patient.logout');
-    Route::post('password/email', 'Patient\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-    Route::get('password/reset', 'Patient\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-    Route::post('password/reset', 'Patient\Auth\ResetPasswordController@reset')->name('password.update');
-    Route::get('password/reset/{token}', 'Patient\Auth\ResetPasswordController@showResetForm')->name('password.reset');
-    Route::get('register', 'Patient\Auth\RegisterController@showRegistrationForm')->name('register');
+    Route::post('password/email', 'Patient\Auth\ForgotPasswordController@sendResetLinkEmail')->name('patient.password.email');
+    Route::get('password/reset', 'Patient\Auth\ForgotPasswordController@showLinkRequestForm')->name('patient.password.request');
+    Route::post('password/reset', 'Patient\Auth\ResetPasswordController@reset')->name('patient.password.update');
+    Route::get('password/reset/{token}', 'Patient\Auth\ResetPasswordController@showResetForm')->name('patient.password.reset');
+    Route::get('register', 'Patient\Auth\RegisterController@showRegistrationForm')->name('patient.register');
     Route::post('register', 'Patient\Auth\RegisterController@register');
     Route::get('dashboard', 'Patient\PatientController@index')->name('patient.dashboard');
 });

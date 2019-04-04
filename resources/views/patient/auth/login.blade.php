@@ -79,7 +79,7 @@
                 </div>
             </form>
 
-            <a href="#" class="text-center">Register a new membership</a>
+        <a href="{{ route('patient.register') }}" class="text-center">Register a new membership</a>
 
         </div>
         <!-- /.login-box-body -->
