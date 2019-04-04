@@ -46,13 +46,13 @@
                         </div>
                     </div>
                     @if ($errors->has('email'))
-                    <span class="help-block text-red">
-                        <strong>{{ $errors->first('email') }}</strong>
+                    <span class="form-text text-danger">
+                        {{ $errors->first('email') }}
                     </span>
                     @endif
                     @if ($errors->has('password'))
-                    <span class="help-block text-red">
-                        <strong>{{ $errors->first('password') }}</strong>
+                    <span class="form-text text-danger">
+                        {{ $errors->first('password') }}
                     </span>
                     @endif
 
