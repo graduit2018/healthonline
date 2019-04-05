@@ -80,6 +80,8 @@
             </form>
 
         <a href="{{ route('patient.register') }}" class="text-center">Register a new membership</a>
+        <br>
+        <a href="{{ route('patient.password.request') }}" class="text-center">Forgot your password?</a>
 
         </div>
         <!-- /.login-box-body -->
