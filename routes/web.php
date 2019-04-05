@@ -41,5 +41,8 @@ Route::prefix('patient')->group(function() {
     Route::get('password/reset/{token}', 'Patient\Auth\ResetPasswordController@showResetForm')->name('patient.password.reset');
     Route::get('register', 'Patient\Auth\RegisterController@showRegistrationForm')->name('patient.register');
     Route::post('register', 'Patient\Auth\RegisterController@register');
+});
+
+Route::prefix('patient')->middleware('auth:patient')->group(function() {
     Route::get('dashboard', 'Patient\PatientController@index')->name('patient.dashboard');
 });
