@@ -41,5 +41,4 @@ class Patient extends Authenticatable
     {
         $this->notify(new ResetPassword($token));
     }
-
 }
