@@ -36,10 +36,10 @@
 <body class="hold-transition skin-red-light sidebar-mini">
     <!-- Site wrapper -->
     <div class="wrapper">
-        @include('layouts.patient.partials.header')
-        @include('layouts.patient.partials.sidebar')
-        @include('layouts.patient.partials.content')
-        @include('layouts.patient.partials.footer')
+        @include('patient.layouts.dashboard.partials.header')
+        @include('patient.layouts.dashboard.partials.sidebar')
+        @include('patient.layouts.dashboard.partials.content')
+        @include('patient.layouts.dashboard.partials.footer')
     </div>
     <!-- ./wrapper -->
     <!-- jQuery 3 -->
