@@ -1,4 +1,4 @@
-@extends('layouts.patient')
+@extends('patient.layouts.dashboard.layout')
 
 @section('content')
 <div class="box">

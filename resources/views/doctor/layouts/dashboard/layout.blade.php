@@ -21,10 +21,11 @@
 <body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->
     <div class="wrapper">
-        @include('layouts.doctor.partials.header')
-        @include('layouts.doctor.partials.sidebar')
-        @include('layouts.doctor.partials.content')
-        @include('layouts.doctor.partials.footer')
+
+        @include('doctor.layouts.dashboard.partials.header')
+        @include('doctor.layouts.dashboard.partials.sidebar')
+        @include('doctor.layouts.dashboard.partials.content')
+        @include('doctor.layouts.dashboard.partials.footer')
     </div>
     <!-- ./wrapper -->
 

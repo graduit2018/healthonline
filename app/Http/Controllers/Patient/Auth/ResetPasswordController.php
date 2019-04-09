@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Patient\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Auth;
 
 class ResetPasswordController extends Controller
 {
@@ -25,7 +28,7 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/patient/dashboard';
 
     /**
      * Create a new controller instance.
@@ -34,6 +37,23 @@ class ResetPasswordController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest:patient');
+    }
+
+    public function showResetForm(Request $request, $token = null)
+    {
+        return view('patient.auth.passwords.reset')->with(
+            ['token' => $token, 'email' => $request->email]
+        );
+    }
+
+    protected function guard()
+    {
+        return Auth::guard('patient');
+    }
+
+    public function broker()
+    {
+        return Password::broker('patients');
     }
 }
