@@ -26,8 +26,9 @@
   <![endif]-->
 
     <!-- Google Font -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <!-- ToastrJS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
 </head>
 
 <body class="hold-transition login-page">
@@ -49,6 +50,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- iCheck -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
+    <!-- ToastrJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
     <script>
         $(function () {
             $('input').iCheck({
@@ -57,6 +60,24 @@
                 increaseArea: '20%' /* optional */
             });
         });
+
+        $(document).ready(function () {
+            @if (session('error'))
+                toastr.error('{{ session('error') }}');
+            @endif
+
+            @if (session('warning'))
+                toastr.warning('{{ session('warning') }}');
+            @endif
+
+            @if (session('success'))
+                toastr.success('{{ session('success') }}');
+            @endif
+
+            @if (session('status'))
+                toastr.success('{{ session('status') }}');
+            @endif
+        })
     </script>
 </body>
 

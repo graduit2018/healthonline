@@ -29,8 +29,9 @@
   <![endif]-->
 
     <!-- Google Font -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <!-- ToastrJS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
 </head>
 
 <body class="hold-transition skin-red-light sidebar-mini">
@@ -53,9 +54,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
     <!-- AdminLTE App -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.10/js/adminlte.min.js"></script>
+    <!-- ToastrJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('.sidebar-menu').tree()
+            $('.sidebar-menu').tree();
+
+            toastr.success('adadadadads');
+
+            @if (session('error'))
+                toastr.error('{{ session('error') }}');
+            @endif
+
+            @if (session('warning'))
+                toastr.warning('{{ session('warning') }}');
+            @endif
+
+            @if (session('success'))
+                toastr.success('{{ session('success') }}');
+            @endif
+
+            @if (session('status'))
+                toastr.success('{{ session('status') }}');
+            @endif
         })
     </script>
 </body>

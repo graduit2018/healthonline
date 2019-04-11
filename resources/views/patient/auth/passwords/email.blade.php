@@ -9,12 +9,6 @@ Patient | Reset Password
 @endsection
 
 @section('content')
-@if (session('status'))
-<div class="alert alert-success" role="alert">
-    {{ session('status') }}
-</div>
-@endif
-
 <form action="{{ route('patient.password.email') }}" method="post">
     @csrf
 
