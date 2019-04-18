@@ -75,6 +75,7 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <chat-bubble></chat-bubble>
     </div>
 </body>
 </html>
