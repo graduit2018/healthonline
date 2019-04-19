@@ -9,6 +9,12 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import Vuetify from 'vuetify'
+
+Vue.use(Vuetify)
+
+import 'vuetify/dist/vuetify.min.css'
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -22,6 +28,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('chat-bubble', require('./components/ChatBubble.vue').default);
+Vue.component('Chat', require('./components/Chat.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

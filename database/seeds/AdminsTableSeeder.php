@@ -16,5 +16,11 @@ class AdminsTableSeeder extends Seeder
             'email' => 'admin@example.com',
             'password' => bcrypt('admin'),
         ]);
+
+        factory(\App\Models\Admin::class)->create([
+            'name' => 'Admin2',
+            'email' => 'admin2@example.com',
+            'password' => bcrypt('admin'),
+        ]);
     }
 }

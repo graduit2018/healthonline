@@ -52,3 +52,8 @@ Route::prefix('patient')->group(function() {
 Route::prefix('patient')->middleware('auth:patient')->group(function() {
     Route::get('dashboard', 'Patient\PatientController@index')->name('patient.dashboard');
 });
+
+Route::get('messages', 'Admin\MessageController@fetchMessages');
+Route::post('messages', 'Admin\MessageController@sendMessage');
+
+Broadcast::routes(['middleware' => ['auth:admin']]);
