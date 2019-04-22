@@ -25,6 +25,8 @@ Route::prefix('admin')->group(function() {
 
 Route::prefix('admin')->middleware('auth:admin')->group(function() {
     Route::get('dashboard', 'Admin\AdminController@index')->name('admin.dashboard');
+
+    Route::get('private', 'Admin\AdminController@private')->name('private');
 });
 
 Route::prefix('doctor')->group(function() {
@@ -53,7 +55,10 @@ Route::prefix('patient')->middleware('auth:patient')->group(function() {
     Route::get('dashboard', 'Patient\PatientController@index')->name('patient.dashboard');
 });
 
+Route::get('/users', 'Admin\AdminController@users')->name('users');
 Route::get('messages', 'Admin\MessageController@fetchMessages');
 Route::post('messages', 'Admin\MessageController@sendMessage');
+Route::get('/private-messages/{user}', 'Admin\MessageController@privateMessages')->name('privateMessages');
+Route::post('/private-messages/{user}', 'Admin\MessageController@sendPrivateMessage')->name('privateMessages.store');
 
 Broadcast::routes(['middleware' => ['auth:admin']]);

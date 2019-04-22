@@ -29,6 +29,7 @@ import 'vuetify/dist/vuetify.min.css'
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('chat-bubble', require('./components/ChatBubble.vue').default);
 Vue.component('Chat', require('./components/Chat.vue').default);
+Vue.component('PrivateChat', require('./components/PrivateChat.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

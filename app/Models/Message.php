@@ -7,7 +7,7 @@ use App\Models\Admin;
 
 class Message extends Model
 {
-    protected $fillable = ['message'];
+    protected $guarded = [];
 
     public function admin()
     {
